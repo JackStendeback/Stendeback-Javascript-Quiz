@@ -3,61 +3,61 @@ const quizData = [
     {
         question: "The latest HTML standard is",
         options: ["HTML 4", "HTML 5", "CSS 2", "CSS 3"],
+        answerIndex: 1 // Index of the correct answer
+    },
+
+    {
+        question: "What are shared on the Internet and are called as Web pages?",
+        options: ["Programs", "Cables", "Hypertext Documents", "None"],
+        answerIndex: 2 // Index of the correct answer
+    },
+
+    {
+        question: "The Major components of the Web browser are",
+        options: ["Menu Bar", "Toolbar", "Location", "All of the above"],
+        answerIndex: 3 // Index of the correct answer
+    },
+
+    {
+        question: "Javascript is an _______ language?",
+        options: ["Object-Oriented", "Object-Based", "Procedural", "None of the above"],
         answerIndex: 0 // Index of the correct answer
     },
 
     {
-        question: "Question 2",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+        question: "Which of the following keywords is used to define a variable in Javascript?",
+        options: ["var", "let", "Both A & B", "None of the above"],
+        answerIndex: 2 // Index of the correct answer
+    },
+
+    {
+        question: "Which of the following methods is used to access HTML elements using Javascript?",
+        options: ["getElementById", "getElementsByClassName", "Both A & B", "None of the above"],
+        answerIndex: 2 // Index of the correct answer
+    },
+
+    {
+        question: "Which of the following methods can be used to display data in some form using Javascript?",
+        options: ["document.write()", "console.log()", "window.alert()", "All of the above"],
+        answerIndex: 3 // Index of the correct answer
+    },
+
+    {
+        question: "How can a datatype be declared to be a constant type?",
+        options: ["const", "var", "let", "constant"],
         answerIndex: 0 // Index of the correct answer
     },
 
     {
-        question: "Question 3",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
+        question: "What does the Javascript “debugger” statement do?",
+        options: ["It will debug all the errors in the program at runtime", "It acts as a breakpoint in a program", "It will debug errors in the current statement, if any.", "All of the above"],
+        answerIndex: 1 // Index of the correct answer
     },
 
     {
-        question: "Question 4",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 5",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 6",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 7",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 8",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 9",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
-    },
-
-    {
-        question: "Question 10",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answerIndex: 0 // Index of the correct answer
+        question: "Which of the following is not a Javascript framework?",
+        options: ["Node", "Vue", "React", "Cassandra"],
+        answerIndex: 3 // Index of the correct answer
     },
 ];
 
