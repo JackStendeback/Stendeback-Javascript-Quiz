@@ -48,7 +48,7 @@
                     <p class="lead my-4">Try to answer the following code-related questions within the time limit.
                                          Keep in mind that incorrect answers will penalize your score/time by five seconds!
                     </p>
-                    <button type="button" class="btn btn-primary btn-lg">Start Quiz</button>
+                    <button id="submit-btn" type="button" class="btn btn-primary btn-lg">Start Quiz</button>
                 </div>
                 <img class="img-fluid w-50" src="img/undraw_code_thinking_re_gka2.svg" alt="Thinking about code" />
             </div>
@@ -56,12 +56,14 @@
     </header>
 
     <!-- Main -->
-    <section id="quiz-container">
-        <h1>Web Developement Quiz</h1>
-        <div id="question-container"></div>
-        <div id="timer">Time: <span id="timer-display"> </span> seconds</div>
-        <button id="submit-btn">Submit</button>
-        
+    <section id="quiz-container" class="bg-secondary text-light p-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-block">
+                 <h1>Web Developement Quiz</h1>
+                 <div id="question-container"></div>
+                 <div id="timer">Time: <span id="timer-display"> </span> seconds</div>
+            </div>
+        </div>
     </section>
 
     <!-- Learn More Section -->

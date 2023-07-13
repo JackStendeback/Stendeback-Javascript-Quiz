@@ -60,3 +60,9 @@ const quizData = [
         answerIndex: 0 // Index of the correct answer
     },
 ];
+
+// Quiz logic
+const quizContainer = document.getElementById("quiz-container");
+const questionContainer = document.getElementById("question-container");
+const timerDisplay = document.getElementById("timer-display");
+const submitButton = document.getElementById("submit-btn");
