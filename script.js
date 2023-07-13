@@ -88,13 +88,14 @@ function startTimer() {
         timeLeft--;
         timerDisplay.textContent = timeLeft;
 
-        if (timeLeft === 0) {
+        if (timeLeft <= 0) {
             clearInterval(timer);
             endQuiz();
         }
-    }
-    
-)}
+    }, 1000);
+}
+
+
 
 //End the quiz and display the score
 function endQuiz() {
@@ -105,3 +106,21 @@ function endQuiz() {
     <h2>Your score is ${score}</h2>
     `;
 }
+
+//Event listener for submit button
+submitButton.addEventListener("click", function () {
+// Check the selected answer
+// If correct, increment score
+
+
+//Next question / end of quiz
+if (currentQuestionIndex < quizData.length - 1) {
+    currentQuestionIndex++;
+    renderQuestion();
+} else {
+    endQuiz();
+}
+});
+
+// Start the quiz
+startQuiz();
