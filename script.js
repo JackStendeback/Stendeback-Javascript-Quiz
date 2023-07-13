@@ -74,11 +74,32 @@ let timeLeft = 60; // Total time for the quiz measured in seconds
 
 // Rendering current questions and answers
 function renderQuestion() {
+    const currentQuestion = quizData[currentQuestionIndex];
 
+  // Clear the previous question and options
+  questionContainer.innerHTML = "";
+
+  // Render the question
+  const questionElement = document.createElement("h2");
+  questionElement.textContent = currentQuestion.question;
+  questionContainer.appendChild(questionElement);
+
+  // Render the options
+  for (let i = 0; i < currentQuestion.options.length; i++) {
+    const option = currentQuestion.options[i];
+    const optionElement = document.createElement("button");
+    optionElement.textContent = option;
+    optionElement.addEventListener("click", function () {
+      selectAnswer(i);
+    });
+    questionContainer.appendChild(optionElement);
+  }
 }
 
 // Start the quiz
 function startQuiz() {
+    startButton.style.display = "none";
+    quizContainer.style.display = "block";
     renderQuestion();
     startTimer();
 }
@@ -147,4 +168,4 @@ if (currentQuestionIndex < quizData.length - 1) {
 });
 
 // Event listener to start the quiz
-document.getElementById("start-btn").addEventListener("click", startQuiz);
+startButton.addEventListener("click", startQuiz);
