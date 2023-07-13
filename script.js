@@ -124,19 +124,15 @@ function selectAnswer(selectedIndex) {
 
     if (selectedIndex === answerIndex) {
         score++;
-        // Color coated feedback for correct answer
-        questionContainer.children[selectedIndex + 1].style.backgroundColor = "green";
-    } else {
-        // Color coated feedback for incorrect answer
-        questionContainer.children[selectedIndex + 1].style.backgroundColor = "red";
-        // Color coated feedback for correct answer
-        questionContainer.children[answerIndex + 1].style.backgroundColor = "green";
-    }
-
-    // Disable further selection of options
-    for (let i = 1; i < questionContainer.children.length; i++) {
-        questionContainer.children[i].disabled = true;
-    }
+      } else {
+        timeLeft -= 5; // Subtract 5 seconds for incorrect answer
+      }
+    
+      // Disable further selection of options
+      const options = questionContainer.getElementsByTagName("button");
+      for (let i = 0; i < options.length; i++) {
+        options[i].disabled = true;
+      }
 
     // Show the submit button
     submitButton.style.display = "block";
