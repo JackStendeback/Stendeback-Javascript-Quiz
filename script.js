@@ -137,14 +137,10 @@ function endQuiz() {
 
 //Event listener for submit button
 submitButton.addEventListener("click", function () {
-// Check the selected answer
-// If correct, increment score
-
-
-//Next question / end of quiz
 if (currentQuestionIndex < quizData.length - 1) {
     currentQuestionIndex++;
     renderQuestion();
+    submitButton.style.display = "none";
 } else {
     endQuiz();
 }
