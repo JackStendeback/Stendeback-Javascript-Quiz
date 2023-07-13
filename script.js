@@ -124,10 +124,12 @@ function selectAnswer(selectedIndex) {
 
     if (selectedIndex === answerIndex) {
         score++;
+        questionContainer.children[selectedIndex + 1].classList.add("btn-success");
       } else {
-        timeLeft -= 5; // Subtract 5 seconds for incorrect answer
-      }
-    
+        timeLeft -= 5; // Subtract 5 seconds for incorrect answers
+        questionContainer.children[selectedIndex + 1].classList.add("btn-danger");
+        questionContainer.children[answerIndex + 1].classList.add("btn-success");
+      }  
       // Disable further selection of options
       const options = questionContainer.getElementsByTagName("button");
       for (let i = 0; i < options.length; i++) {
