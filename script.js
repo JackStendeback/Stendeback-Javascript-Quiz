@@ -66,6 +66,7 @@ const quizContainer = document.getElementById("quiz-container");
 const questionContainer = document.getElementById("question-container");
 const timerDisplay = document.getElementById("timer-display");
 const submitButton = document.getElementById("submit-btn");
+const startButton = document.getElementById("start-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -122,5 +123,5 @@ if (currentQuestionIndex < quizData.length - 1) {
 }
 });
 
-// Start the quiz
-startQuiz();
+// Event listener to start the quiz
+document.getElementById("start-btn").addEventListener("click", startQuiz);
