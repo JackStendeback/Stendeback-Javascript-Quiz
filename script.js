@@ -66,3 +66,42 @@ const quizContainer = document.getElementById("quiz-container");
 const questionContainer = document.getElementById("question-container");
 const timerDisplay = document.getElementById("timer-display");
 const submitButton = document.getElementById("submit-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+let timeLeft = 60; // Total time for the quiz measured in seconds
+
+// Rendering current questions and answers
+function renderQuestion() {
+
+}
+
+// Start the quiz
+function startQuiz() {
+    renderQuestion();
+    startTimer();
+}
+
+// Start timer countdown
+function startTimer() {
+    const timer = setInterval(function () {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft === 0) {
+            clearInterval(timer);
+            endQuiz();
+        }
+    }
+    
+)}
+
+//End the quiz and display the score
+function endQuiz() {
+    //Put scoring logic here
+
+    //Display score
+    quizContainer.innerHTML = `
+    <h2>Your score is ${score}</h2>
+    `;
+}
