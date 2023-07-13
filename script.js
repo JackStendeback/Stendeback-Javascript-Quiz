@@ -96,16 +96,43 @@ function startTimer() {
     }, 1000);
 }
 
+// Select the answer
+function selectAnswer(selectedIndex) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const answerIndex = currentQuestion.answerIndex;
+
+    if (selectedIndex === answerIndex) {
+        score++;
+        // Color coated feedback for correct answer
+        questionContainer.children[selectedIndex + 1].style.backgroundColor = "green";
+    } else {
+        // Color coated feedback for incorrect answer
+        questionContainer.children[selectedIndex + 1].style.backgroundColor = "red";
+        // Color coated feedback for correct answer
+        questionContainer.children[answerIndex + 1].style.backgroundColor = "green";
+    }
+
+    // Disable further selection of options
+    for (let i = 1; i < questionContainer.children.length; i++) {
+        questionContainer.children[i].disabled = true;
+    }
+
+    // Show the submit button
+    submitButton.style.display = "block";
+}
 
 
 //End the quiz and display the score
 function endQuiz() {
     //Put scoring logic here
+    questionContainer.style.display = "none";
+    timerDisplay.style.display = "none";
+    submitButton.style.display = "none";
 
     //Display score
-    quizContainer.innerHTML = `
-    <h2>Your score is ${score}</h2>
-    `;
+    const scoreElement = document.createElement("h2");
+    scoreElement.textContent = `Your score is ${score}/${quizData.length}`;
+    quizContainer.appendChild(scoreElement);
 }
 
 //Event listener for submit button
