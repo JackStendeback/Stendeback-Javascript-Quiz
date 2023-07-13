@@ -1,8 +1,8 @@
 // Quiz Data
 const quizData = [
     {
-        question: "Question 1",
-        options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+        question: "The latest HTML standard is",
+        options: ["HTML 4", "HTML 5", "CSS 2", "CSS 3"],
         answerIndex: 0 // Index of the correct answer
     },
 
@@ -67,10 +67,20 @@ const questionContainer = document.getElementById("question-container");
 const timerDisplay = document.getElementById("timer-display");
 const submitButton = document.getElementById("submit-btn");
 const startButton = document.getElementById("start-btn");
+submitButton.classList.add("hidden");
 
 let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 60; // Total time for the quiz measured in seconds
+
+function showSubmitButton() {
+    submitButton.classList.remove("hidden"); // Show the submit button
+}
+
+function hideSubmitButton() {
+    submitButton.classList.add("hidden"); // Hide the submit button
+}
+
 
 // Rendering current questions and answers
 function renderQuestion() {
@@ -96,10 +106,16 @@ function renderQuestion() {
   }
 }
 
+function showSubmitButton() {
+    submitButton.classList.remove("hidden");
+  }
+
 // Start the quiz
 function startQuiz() {
     startButton.style.display = "none";
     quizContainer.style.display = "block";
+    hideSubmitButton();
+    showSubmitButton();
     renderQuestion();
     startTimer();
 }
@@ -137,7 +153,7 @@ function selectAnswer(selectedIndex) {
       }
 
     // Show the submit button
-    submitButton.style.display = "block";
+    submitButton.classList.remove("hidden");
 }
 
 
@@ -152,6 +168,8 @@ function endQuiz() {
     const scoreElement = document.createElement("h2");
     scoreElement.textContent = `Your score is ${score}/${quizData.length}`;
     quizContainer.appendChild(scoreElement);
+
+    //Add display for initials
 }
 
 //Event listener for submit button
@@ -159,7 +177,7 @@ submitButton.addEventListener("click", function () {
 if (currentQuestionIndex < quizData.length - 1) {
     currentQuestionIndex++;
     renderQuestion();
-    submitButton.style.display = "none";
+    submitButton.classList.add("hidden");
 } else {
     endQuiz();
 }
