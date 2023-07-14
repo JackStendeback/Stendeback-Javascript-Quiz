@@ -1,6 +1,3 @@
-.hidden {
-    display: none;
-  }
 
   .btn-success {
     background-color: #28a745;
@@ -15,5 +12,9 @@
   #timer {
     font-size: 20px;
     font-weight: bold;
-    color: brown;
+    color: white;
+  }
+
+  #submit-btn {
+    display: hidden;
   }

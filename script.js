@@ -82,13 +82,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 60; // Total time for the quiz measured in seconds
 
-function showSubmitButton() {
-    submitButton.classList.remove("hidden"); // Show the submit button
-}
-
-function hideSubmitButton() {
-    submitButton.classList.add("hidden"); // Hide the submit button
-}
+submitButton.style.display = "none";
 
 
 // Rendering current questions and answers
@@ -117,24 +111,24 @@ function renderQuestion() {
   }
 }
 
-function showSubmitButton() {
-    submitButton.classList.remove("hidden");
-  }
-
 // Start the quiz
 function startQuiz() {
     startButton.style.display = "none";
     quizContainer.style.display = "block";
-    hideSubmitButton();
-    showSubmitButton();
     renderQuestion();
     startTimer();
 
-    quizContainer.classList.add("container");
-    questionContainer.classList.add("card", "p-4", "bg-light", "text-dark");
+    submitButton.style.display = "block";
+
+
+  // The line of code below was messing up the layout of the colors around the quiz.
+  //  quizContainer.classList.add("container"); 
+
+    questionContainer.classList.add("card", "p-4", "bg-info", "text-dark");
     timerDisplay.classList.add("badge", "badge-primary");
     submitButton.classList.add("btn", "btn-primary"); 
     startButton.classList.add("btn", "btn-primary");
+
 }
 
 // Start timer countdown
@@ -207,7 +201,7 @@ function endQuiz() {
         } else {
           alert("Please enter your initials.");
         }
-      });
+      }); 
   }
 
 // High score section
