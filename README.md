@@ -11,49 +11,58 @@ Link To Deployed Application: jackstendeback.github.io/Stendeback-Javascript-Qui
 Screenshots:
 
 
-1:
+1:<img width="1512" alt="Screenshot 2023-07-13 at 10 20 48 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/6ac5821f-4a05-44f7-99e4-cf651ac94170">
 
 
 
 
-2:
+
+2:<img width="1512" alt="Screenshot 2023-07-13 at 10 20 56 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/8cb4c261-b61b-4a3e-a38f-b14707ff6447">
 
 
 
 
-3:
+
+3:<img width="1512" alt="Screenshot 2023-07-13 at 10 21 00 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/79548e4c-1513-4371-8e8b-2f72a453e427">
 
 
 
 
-4:
+
+4:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 25 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/0fa7e2ab-f0cb-4c99-9b51-390682a25843">
 
 
 
 
-5:
+
+5:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 31 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/ffd2d1ab-7eae-4b3e-8749-9525df7df18b">
 
 
 
 
-6:
+
+6:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 37 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/9a6f0c5c-0aa8-46ac-aed9-0b9288270bc8">
 
 
 
 
-7:
+
+7:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 42 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/050e3630-5a26-4c51-a067-b1c4c44f4c51">
 
 
 
 
-8:
+
+8:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 46 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/b1416930-7db6-4166-8fa0-6a95a6c865c1">
 
 
 
 
-9:
+
+9:<img width="1512" alt="Screenshot 2023-07-13 at 10 22 50 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/fd6344c7-51d6-4177-b8c3-327b201cbcb4">
 
 
 
 
-10:
+
+10:<img width="1512" alt="Screenshot 2023-07-13 at 10 23 59 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/5cceba60-ece7-45f0-b053-62df8e597314">
