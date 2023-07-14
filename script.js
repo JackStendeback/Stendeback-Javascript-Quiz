@@ -13,7 +13,7 @@ const quizData = [
     },
 
     {
-        question: "The Major components of the Web browser are",
+        question: "The major components of the web browser are",
         options: ["Menu Bar", "Toolbar", "Location", "All of the above"],
         answerIndex: 3 // Index of the correct answer
     },
@@ -61,13 +61,22 @@ const quizData = [
     },
 ];
 
-// Quiz logic
+// Quiz logic, added styling to the quiz using Bootstrap
 const quizContainer = document.getElementById("quiz-container");
+quizContainer.classList.add("container");
+
 const questionContainer = document.getElementById("question-container");
+questionContainer.classList.add("card", "p-4");
+
 const timerDisplay = document.getElementById("timer-display");
+timerDisplay.classList.add("badge", "badge-primary");
+
 const submitButton = document.getElementById("submit-btn");
+submitButton.classList.add("btn", "btn-primary");
+
 const startButton = document.getElementById("start-btn");
-submitButton.classList.add("hidden");
+startButton.classList.add("btn", "btn-primary");
+
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -89,15 +98,17 @@ function renderQuestion() {
   // Clear the previous question and options
   questionContainer.innerHTML = "";
 
-  // Render the question
+  // Render the question, added styling using bootstrap.
   const questionElement = document.createElement("h2");
+  questionElement.classList.add("card-title");
   questionElement.textContent = currentQuestion.question;
   questionContainer.appendChild(questionElement);
 
-  // Render the options
+  // Render the options, added styling using bootstrap.
   for (let i = 0; i < currentQuestion.options.length; i++) {
     const option = currentQuestion.options[i];
     const optionElement = document.createElement("button");
+    optionElement.classList.add("btn", "btn-light", "btn-block", "mb-2");
     optionElement.textContent = option;
     optionElement.addEventListener("click", function () {
       selectAnswer(i);
