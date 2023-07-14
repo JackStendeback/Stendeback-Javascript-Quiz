@@ -66,3 +66,9 @@ Screenshots:
 
 
 10:<img width="1512" alt="Screenshot 2023-07-13 at 10 23 59 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/5cceba60-ece7-45f0-b053-62df8e597314">
+
+
+
+
+11: <img width="1512" alt="Screenshot 2023-07-13 at 10 26 45 PM" src="https://github.com/JackStendeback/Stendeback-Javascript-Quiz/assets/129129990/fa6a7ef2-31f8-40ad-91b1-4b41b49e2061">
+
