@@ -198,13 +198,16 @@ function endQuiz() {
   
     // Event listener for save button
     saveButton.addEventListener("click", function () {
-        if (!localStorage.getItem("quizScores")) {
-            saveScore(initialsInput.value, score);
-            showHighScores();
-          } else {
-            alert("You have already saved your initials for this attempt.");
-          }
-        });
+        const initials = initialsInput.value;
+
+        // Check if the initials are provided
+        if (initials.trim() !== "") {
+          saveScore(initials, score);
+          showHighScores();
+        } else {
+          alert("Please enter your initials.");
+        }
+      });
   }
 
 // High score section
@@ -251,11 +254,15 @@ if (currentQuestionIndex < quizData.length - 1) {
 function saveScore(initials, score) {
     // Retrieve existing scores from local storage or initialize an empty array
     const existingScores = JSON.parse(localStorage.getItem("quizScores")) || [];
-  
+
+     // Check if the initials for this attempt already exist in the scores array
+    const isInitialsExist = existingScores.some((item) => item.initials === initials);
+
+  if (!isInitialsExist) {
     // Create a new score object with initials and score values
     const newScore = { initials, score };
-  
-    // Add the new score to the existing scores array
+
+   // Add the new score to the existing scores array
     existingScores.push(newScore);
   
     // Sort the scores array in descending order based on score
@@ -264,7 +271,7 @@ function saveScore(initials, score) {
     // Store the updated scores array back in local storage
     localStorage.setItem("quizScores", JSON.stringify(existingScores));
   }
-  
+}
 
 // Event listener to start the quiz
 startButton.addEventListener("click", startQuiz);
