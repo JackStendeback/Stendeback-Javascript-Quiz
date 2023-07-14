@@ -218,5 +218,23 @@ if (currentQuestionIndex < quizData.length - 1) {
 }
 });
 
+function saveScore(initials, score) {
+    // Retrieve existing scores from local storage or initialize an empty array
+    const existingScores = JSON.parse(localStorage.getItem("quizScores")) || [];
+  
+    // Create a new score object with initials and score values
+    const newScore = { initials, score };
+  
+    // Add the new score to the existing scores array
+    existingScores.push(newScore);
+  
+    // Sort the scores array in descending order based on score
+    existingScores.sort((a, b) => b.score - a.score);
+  
+    // Store the updated scores array back in local storage
+    localStorage.setItem("quizScores", JSON.stringify(existingScores));
+  }
+  
+
 // Event listener to start the quiz
 startButton.addEventListener("click", startQuiz);
