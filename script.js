@@ -207,6 +207,36 @@ function endQuiz() {
   });
 }
 
+// High score section
+function showHighScores() {
+    const highScoresContainer = document.getElementById("high-scores-container");
+    const highScoresList = document.getElementById("high-scores-list");
+  
+    // Retrieve scores from local storage
+    const scores = JSON.parse(localStorage.getItem("quizScores"));
+  
+    // Clear existing scores from the list
+    highScoresList.innerHTML = "";
+  
+    // If there are no scores, display a message
+    if (!scores || scores.length === 0) {
+      const messageItem = document.createElement("li");
+      messageItem.textContent = "No high scores yet";
+      messageItem.classList.add("list-group-item");
+      highScoresList.appendChild(messageItem);
+      return;
+    }
+
+    scores.forEach(function(score, index) {
+        const scoreItem = document.createElement("li");
+        scoreItem.textContent = `${index + 1}. ${score.initials}: ${score.score}`;
+        scoreItem.classList.add("list-group-item");
+        highScoresList.appendChild(scoreItem);
+      });
+    
+      highScoresContainer.style.display = "block";
+    }
+
 //Event listener for submit button
 submitButton.addEventListener("click", function () {
 if (currentQuestionIndex < quizData.length - 1) {
