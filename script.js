@@ -63,19 +63,19 @@ const quizData = [
 
 // Quiz logic, added styling to the quiz using Bootstrap
 const quizContainer = document.getElementById("quiz-container");
-quizContainer.classList.add("container");
+// quizContainer.classList.add("container");
 
 const questionContainer = document.getElementById("question-container");
-questionContainer.classList.add("card", "p-4");
+// questionContainer.classList.add("card", "p-4");
 
 const timerDisplay = document.getElementById("timer-display");
-timerDisplay.classList.add("badge", "badge-primary");
+// timerDisplay.classList.add("badge", "badge-primary");
 
 const submitButton = document.getElementById("submit-btn");
-submitButton.classList.add("btn", "btn-primary");
+// submitButton.classList.add("btn", "btn-primary");
 
 const startButton = document.getElementById("start-btn");
-startButton.classList.add("btn", "btn-primary");
+// startButton.classList.add("btn", "btn-primary");
 
 
 let currentQuestionIndex = 0;
