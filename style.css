@@ -1,3 +1,13 @@
 .hidden {
     display: none;
   }
+
+  .btn-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }

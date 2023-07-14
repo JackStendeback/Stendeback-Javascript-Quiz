@@ -100,7 +100,7 @@ function renderQuestion() {
 
   // Render the question, added styling using bootstrap.
   const questionElement = document.createElement("h2");
-  questionElement.classList.add("card-title");
+  questionElement.classList.add("card-title", "font-weight-bold", "mb-4");
   questionElement.textContent = currentQuestion.question;
   questionContainer.appendChild(questionElement);
 
@@ -108,7 +108,7 @@ function renderQuestion() {
   for (let i = 0; i < currentQuestion.options.length; i++) {
     const option = currentQuestion.options[i];
     const optionElement = document.createElement("button");
-    optionElement.classList.add("btn", "btn-light", "btn-block", "mb-2");
+    optionElement.classList.add("btn", "btn-light", "btn-block", "mb-2", "text-dark");
     optionElement.textContent = option;
     optionElement.addEventListener("click", function () {
       selectAnswer(i);
@@ -129,6 +129,12 @@ function startQuiz() {
     showSubmitButton();
     renderQuestion();
     startTimer();
+
+    quizContainer.classList.add("container");
+    questionContainer.classList.add("card", "p-4", "bg-light", "text-dark");
+    timerDisplay.classList.add("badge", "badge-primary");
+    submitButton.classList.add("btn", "btn-primary"); 
+    startButton.classList.add("btn", "btn-primary");
 }
 
 // Start timer countdown
@@ -149,19 +155,19 @@ function selectAnswer(selectedIndex) {
     const currentQuestion = quizData[currentQuestionIndex];
     const answerIndex = currentQuestion.answerIndex;
 
+    const options = questionContainer.getElementsByTagName("button");
+    for (let i = 0; i < options.length; i++) {
+      options[i].disabled = true;
+    }
+  
     if (selectedIndex === answerIndex) {
-        score++;
-        questionContainer.children[selectedIndex + 1].classList.add("btn-success");
-      } else {
-        timeLeft -= 5; // Subtract 5 seconds for incorrect answers
-        questionContainer.children[selectedIndex + 1].classList.add("btn-danger");
-        questionContainer.children[answerIndex + 1].classList.add("btn-success");
-      }  
-      // Disable further selection of options
-      const options = questionContainer.getElementsByTagName("button");
-      for (let i = 0; i < options.length; i++) {
-        options[i].disabled = true;
-      }
+      score++;
+      options[selectedIndex].style.backgroundColor = "green";
+    } else {
+      timeLeft -= 5; // Subtract 5 seconds for incorrect answers
+      options[selectedIndex].style.backgroundColor = "red";
+      options[answerIndex].style.backgroundColor = "green";
+    }
 
     // Show the submit button
     submitButton.classList.remove("hidden");
