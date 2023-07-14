@@ -198,10 +198,13 @@ function endQuiz() {
   
     // Event listener for save button
     saveButton.addEventListener("click", function () {
-      const initials = initialsInput.value;
-      saveScore(initials, score);
-      showHighScores();
-    });
+        if (!localStorage.getItem("quizScores")) {
+            saveScore(initialsInput.value, score);
+            showHighScores();
+          } else {
+            alert("You have already saved your initials for this attempt.");
+          }
+        });
   }
 
 // High score section
