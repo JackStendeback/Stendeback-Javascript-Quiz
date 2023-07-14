@@ -176,36 +176,33 @@ function selectAnswer(selectedIndex) {
 
 //End the quiz and display the score
 function endQuiz() {
-    //Put scoring logic here
     questionContainer.style.display = "none";
     timerDisplay.style.display = "none";
     submitButton.style.display = "none";
-
-    //Display score
+  
     const scoreElement = document.createElement("h2");
     scoreElement.textContent = `Your score is ${score}/${quizData.length}`;
     quizContainer.appendChild(scoreElement);
-
-    //Add display for initials
-    
+  
     // Create input field for initials
     const initialsInput = document.createElement("input");
     initialsInput.placeholder = "Enter your initials";
     initialsInput.classList.add("form-control", "my-3");
     quizContainer.appendChild(initialsInput);
-
-  // Create submit button for saving initials and score
+  
+    // Create submit button for saving initials and score
     const saveButton = document.createElement("button");
     saveButton.textContent = "Save";
     saveButton.classList.add("btn", "btn-primary");
     quizContainer.appendChild(saveButton);
-
-  // Event listener for save button
+  
+    // Event listener for save button
     saveButton.addEventListener("click", function () {
       const initials = initialsInput.value;
       saveScore(initials, score);
-  });
-}
+      showHighScores();
+    });
+  }
 
 // High score section
 function showHighScores() {
