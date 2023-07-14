@@ -187,6 +187,24 @@ function endQuiz() {
     quizContainer.appendChild(scoreElement);
 
     //Add display for initials
+    
+    // Create input field for initials
+    const initialsInput = document.createElement("input");
+    initialsInput.placeholder = "Enter your initials";
+    initialsInput.classList.add("form-control", "my-3");
+    quizContainer.appendChild(initialsInput);
+
+  // Create submit button for saving initials and score
+    const saveButton = document.createElement("button");
+    saveButton.textContent = "Save";
+    saveButton.classList.add("btn", "btn-primary");
+    quizContainer.appendChild(saveButton);
+
+  // Event listener for save button
+    saveButton.addEventListener("click", function () {
+      const initials = initialsInput.value;
+      saveScore(initials, score);
+  });
 }
 
 //Event listener for submit button
